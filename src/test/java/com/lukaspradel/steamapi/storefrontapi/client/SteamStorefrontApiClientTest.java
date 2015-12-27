@@ -154,15 +154,4 @@ public class SteamStorefrontApiClientTest extends BaseTest {
 		assertEquals("defcon3", featured.getLayout());
 		assertEquals(Integer.valueOf(1), featured.getStatus());
 	}
-
-	// @Test
-	// public void bla() throws SteamApiException {
-	//
-	// client = new SteamStorefrontApiClient.SteamStorefrontApiClientBuilder()
-	// .build();
-	// Appdetails featured = client
-	// .processRequest(new FeaturedRequest.FeaturedRequestBuilder()
-	// .buildRequest());
-	// System.out.println(featured.getStatus());
-	// }
 }
