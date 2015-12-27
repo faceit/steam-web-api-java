@@ -15,6 +15,7 @@ import org.testng.annotations.Test;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.lukaspradel.steamapi.BaseTest;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterface;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiInterfaceMethod;
 import com.lukaspradel.steamapi.webapi.core.SteamWebApiVersion;
@@ -44,7 +45,7 @@ import com.lukaspradel.steamapi.webapi.request.GetUserStatsForGameRequest.GetUse
 import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest;
 import com.lukaspradel.steamapi.webapi.request.IsPlayingSharedGameRequest.IsPlayingSharedGameRequestServiceParameter;
 
-public class SteamWebApiRequestFactoryTest {
+public class SteamWebApiRequestFactoryTest extends BaseTest {
 
 	@Test
 	public void testCreateGetNewsForAppRequestOnlyAppId() {

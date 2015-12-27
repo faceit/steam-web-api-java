@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.lukaspradel</groupId>
     <artifactId>steam-web-api</artifactId>
-    <version>1.3-SNAPSHOT</version>
+    <version>2.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Steam Web API</name>
     <description>A library to provide access to the data available from Valve's Steam API</description>
@@ -135,123 +135,143 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>generate-getnewsforapp</id>
+                        <id>generate-webapi-getnewsforapp</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <targetPackage>com.lukaspradel.steamapi.data.json.getnewsforapp</targetPackage>
-                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getnewsforapp</sourceDirectory>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/webapi/getnewsforapp</sourceDirectory>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>generate-getglobalachievementpercentagesforapp</id>
+                        <id>generate-webapi-getglobalachievementpercentagesforapp</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <targetPackage>com.lukaspradel.steamapi.data.json.getglobalachievementpercentagesforapp</targetPackage>
-                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getglobalachievementpercentagesforapp</sourceDirectory>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/webapi/getglobalachievementpercentagesforapp</sourceDirectory>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>generate-getglobalstatsforgame</id>
+                        <id>generate-webapi-getglobalstatsforgame</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <targetPackage>com.lukaspradel.steamapi.data.json.getglobalstatsforgame</targetPackage>
-                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getglobalstatsforgame</sourceDirectory>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/webapi/getglobalstatsforgame</sourceDirectory>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>generate-getplayersummaries</id>
+                        <id>generate-webapi-getplayersummaries</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <targetPackage>com.lukaspradel.steamapi.data.json.getplayersummaries</targetPackage>
-                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getplayersummaries</sourceDirectory>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/webapi/getplayersummaries</sourceDirectory>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>generate-getfriendlist</id>
+                        <id>generate-webapi-getfriendlist</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <targetPackage>com.lukaspradel.steamapi.data.json.getfriendlist</targetPackage>
-                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getfriendlist</sourceDirectory>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/webapi/getfriendlist</sourceDirectory>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>generate-getplayerachievements</id>
+                        <id>generate-webapi-getplayerachievements</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <targetPackage>com.lukaspradel.steamapi.data.json.getplayerachievements</targetPackage>
-                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getplayerachievements</sourceDirectory>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/webapi/getplayerachievements</sourceDirectory>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>generate-getuserstatsforgame</id>
+                        <id>generate-webapi-getuserstatsforgame</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <targetPackage>com.lukaspradel.steamapi.data.json.getuserstatsforgame</targetPackage>
-                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getuserstatsforgame</sourceDirectory>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/webapi/getuserstatsforgame</sourceDirectory>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>generate-getownedgames</id>
+                        <id>generate-webapi-getownedgames</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <targetPackage>com.lukaspradel.steamapi.data.json.getownedgames</targetPackage>
-                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getownedgames</sourceDirectory>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/webapi/getownedgames</sourceDirectory>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>generate-getrecentlyplayedgames</id>
+                        <id>generate-webapi-getrecentlyplayedgames</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <targetPackage>com.lukaspradel.steamapi.data.json.getrecentlyplayedgames</targetPackage>
-                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getrecentlyplayedgames</sourceDirectory>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/webapi/getrecentlyplayedgames</sourceDirectory>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>generate-getschemaforgame</id>
+                        <id>generate-webapi-getschemaforgame</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <targetPackage>com.lukaspradel.steamapi.data.json.getschemaforgame</targetPackage>
-                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getschemaforgame</sourceDirectory>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/webapi/getschemaforgame</sourceDirectory>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>generate-isplayingsharedgame</id>
+                        <id>generate-webapi-isplayingsharedgame</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <targetPackage>com.lukaspradel.steamapi.data.json.isplayingsharedgame</targetPackage>
-                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/isplayingsharedgame</sourceDirectory>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/webapi/isplayingsharedgame</sourceDirectory>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>generate-getplayerbans</id>
+                        <id>generate-webapi-getplayerbans</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <targetPackage>com.lukaspradel.steamapi.data.json.getplayerbans</targetPackage>
-                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/getplayerbans</sourceDirectory>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/webapi/getplayerbans</sourceDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>generate-storefrontapi-featured</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.featured</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/storefrontapi/featured</sourceDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>generate-storefrontapi-appdetails</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.appdetails</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/storefrontapi/appdetails</sourceDirectory>
                         </configuration>
                     </execution>
                 </executions>

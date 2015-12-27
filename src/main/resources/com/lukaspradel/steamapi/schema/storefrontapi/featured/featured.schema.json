@@ -1,0 +1,307 @@
+{
+    "type":"object",
+    "required":false,
+    "javaType":"com.lukaspradel.steamapi.data.json.featured.Featured",
+    "properties":{
+        "featured_linux": {
+            "type":"array",
+            "required":false,
+            "items":
+                {
+                    "type":"object",
+                    "required":false,
+                    "properties":{
+                        "currency": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "discount_percent": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "discounted": {
+                            "type":"boolean",
+                            "required":false
+                        },
+                        "final_price": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "header_image": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "id": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "large_capsule_image": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "linux_available": {
+                            "type":"boolean",
+                            "required":false
+                        },
+                        "mac_available": {
+                            "type":"boolean",
+                            "required":false
+                        },
+                        "name": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "original_price": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "small_capsule_image": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "streamingvideo_available": {
+                            "type":"boolean",
+                            "required":false
+                        },
+                        "type": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "windows_available": {
+                            "type":"boolean",
+                            "required":false
+                        }
+                    }
+                }
+
+
+        },
+        "featured_mac": {
+            "type":"array",
+            "required":false,
+            "items":
+                {
+                    "type":"object",
+                    "required":false,
+                    "properties":{
+                        "currency": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "discount_percent": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "discounted": {
+                            "type":"boolean",
+                            "required":false
+                        },
+                        "final_price": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "header_image": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "id": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "large_capsule_image": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "linux_available": {
+                            "type":"boolean",
+                            "required":false
+                        },
+                        "mac_available": {
+                            "type":"boolean",
+                            "required":false
+                        },
+                        "name": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "original_price": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "small_capsule_image": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "streamingvideo_available": {
+                            "type":"boolean",
+                            "required":false
+                        },
+                        "type": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "windows_available": {
+                            "type":"boolean",
+                            "required":false
+                        }
+                    }
+                }
+
+
+        },
+        "featured_win": {
+            "type":"array",
+            "required":false,
+            "items":
+                {
+                    "type":"object",
+                    "required":false,
+                    "properties":{
+                        "currency": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "discount_percent": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "discounted": {
+                            "type":"boolean",
+                            "required":false
+                        },
+                        "final_price": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "header_image": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "id": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "large_capsule_image": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "linux_available": {
+                            "type":"boolean",
+                            "required":false
+                        },
+                        "mac_available": {
+                            "type":"boolean",
+                            "required":false
+                        },
+                        "name": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "original_price": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "small_capsule_image": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "streamingvideo_available": {
+                            "type":"boolean",
+                            "required":false
+                        },
+                        "type": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "windows_available": {
+                            "type":"boolean",
+                            "required":false
+                        }
+                    }
+                }
+
+
+        },
+        "large_capsules": {
+            "type":"array",
+            "required":false,
+            "items":
+                {
+                    "type":"object",
+                    "required":false,
+                    "properties":{
+                        "currency": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "discount_percent": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "discounted": {
+                            "type":"boolean",
+                            "required":false
+                        },
+                        "final_price": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "header_image": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "id": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "large_capsule_image": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "linux_available": {
+                            "type":"boolean",
+                            "required":false
+                        },
+                        "mac_available": {
+                            "type":"boolean",
+                            "required":false
+                        },
+                        "name": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "original_price": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "small_capsule_image": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "streamingvideo_available": {
+                            "type":"boolean",
+                            "required":false
+                        },
+                        "type": {
+                            "type":"integer",
+                            "required":false
+                        },
+                        "windows_available": {
+                            "type":"boolean",
+                            "required":false
+                        }
+                    }
+                }
+
+
+        },
+        "layout": {
+            "type":"string",
+            "required":false
+        },
+        "status": {
+            "type":"integer",
+            "required":false
+        }
+    }
+}

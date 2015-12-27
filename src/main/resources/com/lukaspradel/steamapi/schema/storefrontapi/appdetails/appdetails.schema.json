@@ -1,0 +1,467 @@
+{
+    "type":"object",
+    "required":false,
+    "javaType":"com.lukaspradel.steamapi.data.json.appdetails.Appdetails",
+    "additionalProperties":{
+            "type":"object",
+            "required":false,
+            "javaType":"com.lukaspradel.steamapi.data.json.appdetails.App",
+            "properties":{
+                "data": {
+                    "type":"object",
+                    "required":false,
+                    "properties":{
+                        "about_the_game": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "achievements": {
+                            "type":"object",
+                            "required":false,
+                            "properties":{
+                                "highlighted": {
+                                    "type":"array",
+                                    "required":false,
+                                    "items":
+                                        {
+                                            "type":"object",
+                                            "required":false,
+                                            "properties":{
+                                                "name": {
+                                                    "type":"string",
+                                                    "required":false
+                                                },
+                                                "path": {
+                                                    "type":"string",
+                                                    "required":false
+                                                }
+                                            }
+                                        }
+
+
+                                },
+                                "total": {
+                                    "type":"number",
+                                    "required":false
+                                }
+                            }
+                        },
+                        "background": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "categories": {
+                            "type":"array",
+                            "required":false,
+                            "items":
+                                {
+                                    "type":"object",
+                                    "required":false,
+                                    "properties":{
+                                        "description": {
+                                            "type":"string",
+                                            "required":false
+                                        },
+                                        "id": {
+                                            "type":"number",
+                                            "required":false
+                                        }
+                                    }
+                                }
+
+
+                        },
+                        "detailed_description": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "developers": {
+                            "type":"array",
+                            "required":false,
+                            "items":
+                                {
+                                    "type":"string",
+                                    "required":false
+                                }
+
+
+                        },
+                        "dlc": {
+                            "type":"array",
+                            "required":false,
+                            "items":
+                                {
+                                    "type":"number",
+                                    "required":false
+                                }
+
+
+                        },
+                        "genres": {
+                            "type":"array",
+                            "required":false,
+                            "items":
+                                {
+                                    "type":"object",
+                                    "required":false,
+                                    "properties":{
+                                        "description": {
+                                            "type":"string",
+                                            "required":false
+                                        },
+                                        "id": {
+                                            "type":"string",
+                                            "required":false
+                                        }
+                                    }
+                                }
+
+
+                        },
+                        "header_image": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "is_free": {
+                            "type":"boolean",
+                            "required":false
+                        },
+                        "legal_notice": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "linux_requirements": {
+                            "type":"object",
+                            "required":false,
+                            "properties":{
+                                "minimum": {
+                                    "type":"string",
+                                    "required":false
+                                }
+                            }
+                        },
+                        "mac_requirements": {
+                            "type":"object",
+                            "required":false,
+                            "properties":{
+                                "minimum": {
+                                    "type":"string",
+                                    "required":false
+                                }
+                            }
+                        },
+                        "metacritic": {
+                            "type":"object",
+                            "required":false,
+                            "properties":{
+                                "score": {
+                                    "type":"number",
+                                    "required":false
+                                },
+                                "url": {
+                                    "type":"string",
+                                    "required":false
+                                }
+                            }
+                        },
+                        "movies": {
+                            "type":"array",
+                            "required":false,
+                            "items":
+                                {
+                                    "type":"object",
+                                    "required":false,
+                                    "properties":{
+                                        "highlight": {
+                                            "type":"boolean",
+                                            "required":false
+                                        },
+                                        "id": {
+                                            "type":"number",
+                                            "required":false
+                                        },
+                                        "name": {
+                                            "type":"string",
+                                            "required":false
+                                        },
+                                        "thumbnail": {
+                                            "type":"string",
+                                            "required":false
+                                        },
+                                        "webm": {
+                                            "type":"object",
+                                            "required":false,
+                                            "properties":{
+                                                "480": {
+                                                    "type":"string",
+                                                    "required":false
+                                                },
+                                                "max": {
+                                                    "type":"string",
+                                                    "required":false
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+
+                        },
+                        "name": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "package_groups": {
+                            "type":"array",
+                            "required":false,
+                            "items":
+                                {
+                                    "type":"object",
+                                    "required":false,
+                                    "properties":{
+                                        "description": {
+                                            "type":"string",
+                                            "required":false
+                                        },
+                                        "display_type": {
+                                            "type":"number",
+                                            "required":false
+                                        },
+                                        "is_recurring_subscription": {
+                                            "type":"string",
+                                            "required":false
+                                        },
+                                        "name": {
+                                            "type":"string",
+                                            "required":false
+                                        },
+                                        "save_text": {
+                                            "type":"string",
+                                            "required":false
+                                        },
+                                        "selection_text": {
+                                            "type":"string",
+                                            "required":false
+                                        },
+                                        "subs": {
+                                            "type":"array",
+                                            "required":false,
+                                            "items":
+                                                {
+                                                    "type":"object",
+                                                    "required":false,
+                                                    "properties":{
+                                                        "can_get_free_license": {
+                                                            "type":"string",
+                                                            "required":false
+                                                        },
+                                                        "is_free_license": {
+                                                            "type":"boolean",
+                                                            "required":false
+                                                        },
+                                                        "option_description": {
+                                                            "type":"string",
+                                                            "required":false
+                                                        },
+                                                        "option_text": {
+                                                            "type":"string",
+                                                            "required":false
+                                                        },
+                                                        "packageid": {
+                                                            "type":"number",
+                                                            "required":false
+                                                        },
+                                                        "percent_savings_text": {
+                                                            "type":"string",
+                                                            "required":false
+                                                        },
+                                                        "percent_savings": {
+                                                            "type":"number",
+                                                            "required":false
+                                                        },
+                                                        "price_in_cents_with_discount": {
+                                                            "type":"number",
+                                                            "required":false
+                                                        }
+                                                    }
+                                                }
+
+
+                                        },
+                                        "title": {
+                                            "type":"string",
+                                            "required":false
+                                        }
+                                    }
+                                }
+
+
+                        },
+                        "packages": {
+                            "type":"array",
+                            "required":false,
+                            "items":
+                                {
+                                    "type":"number",
+                                    "required":false
+                                }
+
+
+                        },
+                        "pc_requirements": {
+                            "type":"object",
+                            "required":false,
+                            "properties":{
+                                "minimum": {
+                                    "type":"string",
+                                    "required":false
+                                }
+                            }
+                        },
+                        "platforms": {
+                            "type":"object",
+                            "required":false,
+                            "properties":{
+                                "linux": {
+                                    "type":"boolean",
+                                    "required":false
+                                },
+                                "mac": {
+                                    "type":"boolean",
+                                    "required":false
+                                },
+                                "windows": {
+                                    "type":"boolean",
+                                    "required":false
+                                }
+                            }
+                        },
+                        "price_overview": {
+                            "type":"object",
+                            "required":false,
+                            "properties":{
+                                "currency": {
+                                    "type":"string",
+                                    "required":false
+                                },
+                                "discount_percent": {
+                                    "type":"number",
+                                    "required":false
+                                },
+                                "final": {
+                                    "type":"number",
+                                    "required":false
+                                },
+                                "initial": {
+                                    "type":"number",
+                                    "required":false
+                                }
+                            }
+                        },
+                        "publishers": {
+                            "type":"array",
+                            "required":false,
+                            "items":
+                                {
+                                    "type":"string",
+                                    "required":false
+                                }
+
+
+                        },
+                        "recommendations": {
+                            "type":"object",
+                            "required":false,
+                            "properties":{
+                                "total": {
+                                    "type":"number",
+                                    "required":false
+                                }
+                            }
+                        },
+                        "release_date": {
+                            "type":"object",
+                            "required":false,
+                            "properties":{
+                                "coming_soon": {
+                                    "type":"boolean",
+                                    "required":false
+                                },
+                                "date": {
+                                    "type":"string",
+                                    "required":false
+                                }
+                            }
+                        },
+                        "required_age": {
+                            "type":"number",
+                            "required":false
+                        },
+                        "reviews": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "screenshots": {
+                            "type":"array",
+                            "required":false,
+                            "items":
+                                {
+                                    "type":"object",
+                                    "required":false,
+                                    "properties":{
+                                        "id": {
+                                            "type":"number",
+                                            "required":false
+                                        },
+                                        "path_full": {
+                                            "type":"string",
+                                            "required":false
+                                        },
+                                        "path_thumbnail": {
+                                            "type":"string",
+                                            "required":false
+                                        }
+                                    }
+                                }
+
+
+                        },
+                        "steam_appid": {
+                            "type":"number",
+                            "required":false
+                        },
+                        "support_info": {
+                            "type":"object",
+                            "required":false,
+                            "properties":{
+                                "email": {
+                                    "type":"string",
+                                    "required":false
+                                },
+                                "url": {
+                                    "type":"string",
+                                    "required":false
+                                }
+                            }
+                        },
+                        "supported_languages": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "type": {
+                            "type":"string",
+                            "required":false
+                        },
+                        "website": {
+                            "type":"string",
+                            "required":false
+                        }
+                    }
+                },
+                "success": {
+                    "type":"boolean",
+                    "required":false
+                }
+            }
+    }
+}

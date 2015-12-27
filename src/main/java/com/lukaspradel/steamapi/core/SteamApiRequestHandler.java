@@ -1,5 +1,6 @@
 package com.lukaspradel.steamapi.core;
 
+
 /**
  * Generic request handler for common properties of all APIs provided by Steam.
  *
@@ -14,20 +15,13 @@ public abstract class SteamApiRequestHandler {
 
 	private boolean useHttps;
 
-	private String key;
-
-	public SteamApiRequestHandler(boolean useHttps, String key) {
+	public SteamApiRequestHandler(boolean useHttps) {
 
 		this.useHttps = useHttps;
-		this.key = key;
 	}
 
 	public boolean isUseHttps() {
 		return useHttps;
-	}
-
-	public String getKey() {
-		return key;
 	}
 
 	public String getProtocol() {

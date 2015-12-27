@@ -1,4 +1,4 @@
-package com.lukaspradel.steamapi.webapi.request;
+package com.lukaspradel.steamapi.storefrontapi.request;
 
 import java.io.IOException;
 import java.net.URI;
@@ -21,28 +21,21 @@ import org.apache.http.util.EntityUtils;
 import com.lukaspradel.steamapi.core.SteamApiRequestHandler;
 import com.lukaspradel.steamapi.core.exception.SteamApiException;
 
-public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
+public class SteamStorefrontApiRequestHandler extends SteamApiRequestHandler {
 
-	private String key;
-
-	public SteamWebApiRequestHandler(boolean useHttps, String key) {
-
+	public SteamStorefrontApiRequestHandler(boolean useHttps) {
 		super(useHttps);
-		this.key = key;
 	}
 
-	protected String getKey() {
-		return key;
-	}
-
-	public String getWebApiResponse(SteamWebApiRequest request)
+	public String getStorefrontApiResponse(SteamStorefrontApiRequest request)
 			throws SteamApiException {
 
 		URI requestUrl = getRequestUrl(request);
-		return getWebApiResponse(requestUrl);
+		return getStorefrontApiResponse(requestUrl);
 	}
 
-	URI getRequestUrl(SteamWebApiRequest request) throws SteamApiException {
+	URI getRequestUrl(SteamStorefrontApiRequest request)
+			throws SteamApiException {
 
 		String scheme = getProtocol();
 		String host = request.getBaseUrl();
@@ -55,16 +48,12 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 		return requestUrl;
 	}
 
-	String getRequestPath(SteamWebApiRequest request) {
+	String getRequestPath(SteamStorefrontApiRequest request) {
 
 		StringBuilder requestPath = new StringBuilder();
 
 		requestPath.append("/");
-		requestPath.append(request.getApiInterface().toString());
-		requestPath.append("/");
-		requestPath.append(request.getInterfaceMethod().toString());
-		requestPath.append("/");
-		requestPath.append(request.getVersion().toString());
+		requestPath.append(request.getMethod().toString());
 
 		return requestPath.toString();
 	}
@@ -72,8 +61,6 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 	List<NameValuePair> getRequestParameters(Map<String, String> parametersMap) {
 
 		List<NameValuePair> nvps = new ArrayList<NameValuePair>();
-
-		nvps.add(new BasicNameValuePair("key", getKey()));
 
 		for (Map.Entry<String, String> param : parametersMap.entrySet()) {
 
@@ -97,7 +84,7 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 		}
 	}
 
-	String getWebApiResponse(URI requestUrl) throws SteamApiException {
+	String getStorefrontApiResponse(URI requestUrl) throws SteamApiException {
 
 		HttpClient client = getHttpClient();
 		HttpGet getRequest = new HttpGet(requestUrl);
