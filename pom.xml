@@ -132,6 +132,7 @@
                     <annotationStyle>jackson2</annotationStyle>
                     <generateBuilders>true</generateBuilders>
                     <initializeCollections>true</initializeCollections>
+                    <includeAdditionalProperties>true</includeAdditionalProperties>
                 </configuration>
                 <executions>
                     <execution>
@@ -262,6 +263,16 @@
                         <configuration>
                             <targetPackage>com.lukaspradel.steamapi.data.json.featured</targetPackage>
                             <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/storefrontapi/featured</sourceDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>generate-storefrontapi-featuredcategories</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.featuredcategories</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/storefrontapi/featuredcategories</sourceDirectory>
                         </configuration>
                     </execution>
                     <execution>

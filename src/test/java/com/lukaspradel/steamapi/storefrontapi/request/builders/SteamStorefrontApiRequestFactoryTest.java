@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 
 import com.lukaspradel.steamapi.BaseTest;
 import com.lukaspradel.steamapi.storefrontapi.core.SteamStorefrontApiMethod;
+import com.lukaspradel.steamapi.storefrontapi.request.FeaturedCategoriesRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.FeaturedRequest;
 
 public class SteamStorefrontApiRequestFactoryTest extends BaseTest {
@@ -20,6 +21,18 @@ public class SteamStorefrontApiRequestFactoryTest extends BaseTest {
 
 		assertNotNull(request);
 		assertEquals(SteamStorefrontApiMethod.FEATURED, request.getMethod());
+		assertTrue(request.getParameters().isEmpty());
+	}
+
+	@Test
+	public void testCreateFeaturedCategoriesRequest() {
+
+		FeaturedCategoriesRequest request = SteamStorefrontApiRequestFactory
+				.createFeaturedCategoriesRequest();
+
+		assertNotNull(request);
+		assertEquals(SteamStorefrontApiMethod.FEATURED_CATEGORIES,
+				request.getMethod());
 		assertTrue(request.getParameters().isEmpty());
 	}
 }

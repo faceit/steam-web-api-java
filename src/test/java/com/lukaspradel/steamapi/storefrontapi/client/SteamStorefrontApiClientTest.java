@@ -17,6 +17,8 @@ import org.testng.annotations.Test;
 import com.lukaspradel.steamapi.BaseTest;
 import com.lukaspradel.steamapi.core.exception.SteamApiException;
 import com.lukaspradel.steamapi.data.json.featured.Featured;
+import com.lukaspradel.steamapi.data.json.featuredcategories.FeaturedCategories;
+import com.lukaspradel.steamapi.storefrontapi.request.FeaturedCategoriesRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.FeaturedRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.SteamStorefrontApiRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.SteamStorefrontApiRequestHandler;
@@ -153,5 +155,23 @@ public class SteamStorefrontApiClientTest extends BaseTest {
 		assertFalse(featured.getFeaturedWin().isEmpty());
 		assertEquals("defcon3", featured.getLayout());
 		assertEquals(Integer.valueOf(1), featured.getStatus());
+	}
+
+	@Test
+	public void testProcessFeaturedCategoriesRequest()
+			throws SteamApiException, IOException {
+
+		FeaturedCategoriesRequest featuredRequest = SteamStorefrontApiRequestFactory
+				.createFeaturedCategoriesRequest();
+
+		String mockAnswer = readResourceAsString("FeaturedCategories.json");
+
+		when(requestHandlerMock.getStorefrontApiResponse(featuredRequest))
+				.thenReturn(mockAnswer);
+
+		FeaturedCategories featuredCategories = client
+				.<FeaturedCategories> processRequest(featuredRequest);
+
+		assertNotNull(featuredCategories);
 	}
 }
