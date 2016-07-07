@@ -1,5 +1,7 @@
 package com.lukaspradel.steamapi.storefrontapi.request.builders;
 
+import com.lukaspradel.steamapi.storefrontapi.request.AppdetailsRequest;
+import com.lukaspradel.steamapi.storefrontapi.request.AppdetailsRequest.AppdetailsRequestBuilder;
 import com.lukaspradel.steamapi.storefrontapi.request.FeaturedCategoriesRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.FeaturedCategoriesRequest.FeaturedCategoriesRequestBuilder;
 import com.lukaspradel.steamapi.storefrontapi.request.FeaturedRequest;
@@ -23,5 +25,10 @@ public abstract class SteamStorefrontApiRequestFactory {
 	public static FeaturedCategoriesRequest createFeaturedCategoriesRequest() {
 
 		return new FeaturedCategoriesRequestBuilder().buildRequest();
+	}
+
+	public static AppdetailsRequest createAppdetailsRequest(int appIds) {
+
+		return new AppdetailsRequestBuilder(appIds).buildRequest();
 	}
 }

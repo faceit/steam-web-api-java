@@ -16,8 +16,11 @@ import org.testng.annotations.Test;
 
 import com.lukaspradel.steamapi.BaseTest;
 import com.lukaspradel.steamapi.core.exception.SteamApiException;
+import com.lukaspradel.steamapi.data.json.appdetails.App;
+import com.lukaspradel.steamapi.data.json.appdetails.Appdetails;
 import com.lukaspradel.steamapi.data.json.featured.Featured;
 import com.lukaspradel.steamapi.data.json.featuredcategories.FeaturedCategories;
+import com.lukaspradel.steamapi.storefrontapi.request.AppdetailsRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.FeaturedCategoriesRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.FeaturedRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.SteamStorefrontApiRequest;
@@ -173,5 +176,28 @@ public class SteamStorefrontApiClientTest extends BaseTest {
 				.<FeaturedCategories> processRequest(featuredRequest);
 
 		assertNotNull(featuredCategories);
+	}
+
+	@Test
+	public void testProcessAppdetailsRequest() throws SteamApiException,
+			IOException {
+
+		AppdetailsRequest appdetailsRequest = SteamStorefrontApiRequestFactory
+				.createAppdetailsRequest(49520);
+
+		String mockAnswer = readResourceAsString("Appdetails.json");
+
+		when(requestHandlerMock.getStorefrontApiResponse(appdetailsRequest))
+				.thenReturn(mockAnswer);
+
+		Appdetails appdetails = client
+				.<Appdetails> processRequest(appdetailsRequest);
+
+		assertNotNull(appdetails);
+		App app = appdetails.getAdditionalProperties().get("49520");
+		assertNotNull(app);
+		assertTrue(app.getSuccess());
+		assertNotNull(app.getData());
+		assertEquals(app.getData().getName(), "Borderlands 2");
 	}
 }
