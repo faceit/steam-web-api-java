@@ -20,7 +20,7 @@ public class FeaturedCategoriesRequest extends SteamStorefrontApiRequest {
 
 	/**
 	 * Builder object to create instances of {@link SteamStorefrontApiRequest}
-	 * for request type {@link FeaturedRequest}.
+	 * for request type {@link FeaturedCategoriesRequest}.
 	 *
 	 * @author lpradel
 	 *
