@@ -285,6 +285,16 @@
                             <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/storefrontapi/appdetails</sourceDirectory>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>generate-storefrontapi-appuserdetails</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetPackage>com.lukaspradel.steamapi.data.json.appuserdetails</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/com/lukaspradel/steamapi/schema/storefrontapi/appuserdetails</sourceDirectory>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>

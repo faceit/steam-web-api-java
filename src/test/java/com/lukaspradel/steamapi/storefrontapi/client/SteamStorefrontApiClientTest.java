@@ -8,6 +8,8 @@ import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.mockito.Mock;
 import org.powermock.reflect.Whitebox;
@@ -18,8 +20,11 @@ import com.lukaspradel.steamapi.BaseTest;
 import com.lukaspradel.steamapi.core.exception.SteamApiException;
 import com.lukaspradel.steamapi.data.json.appdetails.App;
 import com.lukaspradel.steamapi.data.json.appdetails.Appdetails;
+import com.lukaspradel.steamapi.data.json.appuserdetails.AppUserdetail;
+import com.lukaspradel.steamapi.data.json.appuserdetails.AppUserdetails;
 import com.lukaspradel.steamapi.data.json.featured.Featured;
 import com.lukaspradel.steamapi.data.json.featuredcategories.FeaturedCategories;
+import com.lukaspradel.steamapi.storefrontapi.request.AppUserdetailsRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.AppdetailsRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.FeaturedCategoriesRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.FeaturedRequest;
@@ -199,5 +204,33 @@ public class SteamStorefrontApiClientTest extends BaseTest {
 		assertTrue(app.getSuccess());
 		assertNotNull(app.getData());
 		assertEquals(app.getData().getName(), "Borderlands 2");
+	}
+
+	@Test
+	public void testProcessAppUserdetailsRequest() throws SteamApiException,
+			IOException {
+
+		List<Integer> appIds = new ArrayList<Integer>();
+		appIds.add(49520);
+		appIds.add(570);
+
+		AppUserdetailsRequest appUserdetailsRequest = SteamStorefrontApiRequestFactory
+				.createAppUserdetailsRequest(appIds);
+
+		String mockAnswer = readResourceAsString("AppUserdetails.json");
+
+		when(requestHandlerMock.getStorefrontApiResponse(appUserdetailsRequest))
+				.thenReturn(mockAnswer);
+
+		AppUserdetails appUserdetails = client
+				.<AppUserdetails> processRequest(appUserdetailsRequest);
+
+		assertNotNull(appUserdetails);
+		AppUserdetail appUserdetail = appUserdetails.getAdditionalProperties()
+				.get("292030");
+		assertNotNull(appUserdetail);
+		assertTrue(appUserdetail.getSuccess());
+		assertNotNull(appUserdetail.getData());
+		assertTrue(appUserdetail.getData().getIsOwned());
 	}
 }

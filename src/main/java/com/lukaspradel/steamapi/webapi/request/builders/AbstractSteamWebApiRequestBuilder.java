@@ -43,18 +43,20 @@ public abstract class AbstractSteamWebApiRequestBuilder extends
 
 	/**
 	 * Adds List-parameter as comma-separated strings
-	 *
+	 * 
+	 * @param <T>
+	 *            Type of the parameters (e.g. String, Integer, ...)
 	 * @param name
 	 *            Name of the List-parameter
 	 * @param valueList
 	 *            List of the comma-separated strings
 	 */
-	protected void addListParameter(String name, List<String> valueList) {
+	protected <T> void addListParameter(String name, List<T> valueList) {
 
 		StringBuilder paramValue = new StringBuilder();
 
-		for (String value : valueList) {
-			paramValue.append(value);
+		for (T value : valueList) {
+			paramValue.append(value.toString());
 			paramValue.append(",");
 		}
 		paramValue.setLength(paramValue.length() - 1);
@@ -66,17 +68,19 @@ public abstract class AbstractSteamWebApiRequestBuilder extends
 	 * Adds Array-parameter as comma-separated array-strings. For example, an
 	 * array parameter by the name of "param" with the values "val1, val2" would
 	 * be written as "param[0]=val1,param[1]=val2".
-	 *
+	 * 
+	 * @param <T>
+	 *            Type of the parameters (e.g. String, Integer, ...)
 	 * @param name
 	 *            Name of the Array-parameter
 	 * @param valueList
 	 *            List of the comma-separated strings
 	 */
-	protected void addArrayParameter(String name, List<String> valueList) {
+	protected <T> void addArrayParameter(String name, List<T> valueList) {
 
 		int i = 0;
 
-		for (String value : valueList) {
+		for (T value : valueList) {
 
 			StringBuilder paramName = new StringBuilder();
 			StringBuilder paramValue = new StringBuilder();
@@ -86,7 +90,7 @@ public abstract class AbstractSteamWebApiRequestBuilder extends
 			paramName.append(i);
 			paramName.append("]");
 
-			paramValue.append(value);
+			paramValue.append(value.toString());
 
 			addParameter(paramName.toString(), paramValue.toString());
 

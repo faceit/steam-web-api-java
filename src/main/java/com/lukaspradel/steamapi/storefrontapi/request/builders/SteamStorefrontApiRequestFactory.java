@@ -1,5 +1,9 @@
 package com.lukaspradel.steamapi.storefrontapi.request.builders;
 
+import java.util.List;
+
+import com.lukaspradel.steamapi.storefrontapi.request.AppUserdetailsRequest;
+import com.lukaspradel.steamapi.storefrontapi.request.AppUserdetailsRequest.AppUserdetailsRequestBuilder;
 import com.lukaspradel.steamapi.storefrontapi.request.AppdetailsRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.AppdetailsRequest.AppdetailsRequestBuilder;
 import com.lukaspradel.steamapi.storefrontapi.request.FeaturedCategoriesRequest;
@@ -30,5 +34,11 @@ public abstract class SteamStorefrontApiRequestFactory {
 	public static AppdetailsRequest createAppdetailsRequest(int appIds) {
 
 		return new AppdetailsRequestBuilder(appIds).buildRequest();
+	}
+
+	public static AppUserdetailsRequest createAppUserdetailsRequest(
+			List<Integer> appIds) {
+
+		return new AppUserdetailsRequestBuilder(appIds).buildRequest();
 	}
 }
