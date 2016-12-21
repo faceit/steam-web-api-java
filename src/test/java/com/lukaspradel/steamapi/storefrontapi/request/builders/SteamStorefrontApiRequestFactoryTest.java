@@ -16,6 +16,7 @@ import com.lukaspradel.steamapi.storefrontapi.request.AppUserdetailsRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.AppdetailsRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.FeaturedCategoriesRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.FeaturedRequest;
+import com.lukaspradel.steamapi.storefrontapi.request.PackagedetailsRequest;
 
 public class SteamStorefrontApiRequestFactoryTest extends BaseTest {
 
@@ -71,5 +72,19 @@ public class SteamStorefrontApiRequestFactoryTest extends BaseTest {
 		assertFalse(request.getParameters().isEmpty());
 		assertEquals(1, request.getParameters().size());
 		assertEquals("49520,570", request.getParameters().get("appids"));
+	}
+
+	@Test
+	public void testCreatePackagedetailsRequest() {
+
+		PackagedetailsRequest request = SteamStorefrontApiRequestFactory
+				.createPackagedetailsRequest(123);
+
+		assertNotNull(request);
+		assertEquals(SteamStorefrontApiMethod.PACKAGE_DETAILS,
+				request.getMethod());
+		assertFalse(request.getParameters().isEmpty());
+		assertEquals(1, request.getParameters().size());
+		assertEquals("123", request.getParameters().get("packageids"));
 	}
 }

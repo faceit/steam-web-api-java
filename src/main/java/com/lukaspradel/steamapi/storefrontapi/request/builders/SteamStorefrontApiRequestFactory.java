@@ -10,6 +10,8 @@ import com.lukaspradel.steamapi.storefrontapi.request.FeaturedCategoriesRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.FeaturedCategoriesRequest.FeaturedCategoriesRequestBuilder;
 import com.lukaspradel.steamapi.storefrontapi.request.FeaturedRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.FeaturedRequest.FeaturedRequestBuilder;
+import com.lukaspradel.steamapi.storefrontapi.request.PackagedetailsRequest;
+import com.lukaspradel.steamapi.storefrontapi.request.PackagedetailsRequest.PackagedetailsRequestBuilder;
 import com.lukaspradel.steamapi.storefrontapi.request.SteamStorefrontApiRequest;
 
 /**
@@ -40,5 +42,11 @@ public abstract class SteamStorefrontApiRequestFactory {
 			List<Integer> appIds) {
 
 		return new AppUserdetailsRequestBuilder(appIds).buildRequest();
+	}
+
+	public static PackagedetailsRequest createPackagedetailsRequest(
+			int packageIds) {
+
+		return new PackagedetailsRequestBuilder(packageIds).buildRequest();
 	}
 }

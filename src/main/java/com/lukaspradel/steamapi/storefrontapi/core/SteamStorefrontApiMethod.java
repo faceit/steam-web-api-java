@@ -4,6 +4,7 @@ import com.lukaspradel.steamapi.data.json.appdetails.Appdetails;
 import com.lukaspradel.steamapi.data.json.appuserdetails.AppUserdetails;
 import com.lukaspradel.steamapi.data.json.featured.Featured;
 import com.lukaspradel.steamapi.data.json.featuredcategories.FeaturedCategories;
+import com.lukaspradel.steamapi.data.json.packagedetails.Packagedetails;
 
 public enum SteamStorefrontApiMethod {
 
@@ -11,7 +12,8 @@ public enum SteamStorefrontApiMethod {
 			"featuredcategories", FeaturedCategories.class), APP_DETAILS(
 			"appdetails", Appdetails.class), APP_USER_DETAILS("appuserdetails",
 			AppUserdetails.class), MESSAGES("messages", Object.class), PACKAGE_DETAILS(
-			"packagedetails", Object.class), SALE_PAGE("salepage", Object.class);
+			"packagedetails", Packagedetails.class), SALE_PAGE("salepage",
+			Object.class);
 
 	private final String method;
 

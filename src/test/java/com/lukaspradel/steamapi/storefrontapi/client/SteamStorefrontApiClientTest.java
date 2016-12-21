@@ -24,10 +24,13 @@ import com.lukaspradel.steamapi.data.json.appuserdetails.AppUserdetail;
 import com.lukaspradel.steamapi.data.json.appuserdetails.AppUserdetails;
 import com.lukaspradel.steamapi.data.json.featured.Featured;
 import com.lukaspradel.steamapi.data.json.featuredcategories.FeaturedCategories;
+import com.lukaspradel.steamapi.data.json.packagedetails.Packagedetail;
+import com.lukaspradel.steamapi.data.json.packagedetails.Packagedetails;
 import com.lukaspradel.steamapi.storefrontapi.request.AppUserdetailsRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.AppdetailsRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.FeaturedCategoriesRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.FeaturedRequest;
+import com.lukaspradel.steamapi.storefrontapi.request.PackagedetailsRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.SteamStorefrontApiRequest;
 import com.lukaspradel.steamapi.storefrontapi.request.SteamStorefrontApiRequestHandler;
 import com.lukaspradel.steamapi.storefrontapi.request.builders.SteamStorefrontApiRequestFactory;
@@ -232,5 +235,29 @@ public class SteamStorefrontApiClientTest extends BaseTest {
 		assertTrue(appUserdetail.getSuccess());
 		assertNotNull(appUserdetail.getData());
 		assertTrue(appUserdetail.getData().getIsOwned());
+	}
+
+	@Test
+	public void testProcessPackageDetailsRequest() throws SteamApiException,
+			IOException {
+
+		PackagedetailsRequest packagedetailsRequest = SteamStorefrontApiRequestFactory
+				.createPackagedetailsRequest(123);
+
+		String mockAnswer = readResourceAsString("Packagedetails.json");
+
+		when(requestHandlerMock.getStorefrontApiResponse(packagedetailsRequest))
+				.thenReturn(mockAnswer);
+
+		Packagedetails packagedetails = client
+				.<Packagedetails> processRequest(packagedetailsRequest);
+
+		assertNotNull(packagedetails);
+		Packagedetail packagedetail = packagedetails.getAdditionalProperties()
+				.get("123");
+		assertNotNull(packagedetail);
+		assertTrue(packagedetail.getSuccess());
+		assertNotNull(packagedetail.getData());
+		assertEquals(packagedetail.getData().getName(), "Zuma Deluxe");
 	}
 }
