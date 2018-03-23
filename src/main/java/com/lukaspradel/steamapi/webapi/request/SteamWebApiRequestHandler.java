@@ -102,9 +102,13 @@ public class SteamWebApiRequestHandler extends SteamApiRequestHandler {
 			if (!statusCode.toString().startsWith("20")) {
 				if (statusCode.equals(HttpStatus.SC_UNAUTHORIZED)) {
 					throw new SteamApiException(
-							SteamApiException.Cause.FORBIDDEN, statusCode,
+							SteamApiException.Cause.UNAUTHORIZED, statusCode,
 							response.getStatusLine().getReasonPhrase());
-				}
+				} else if (statusCode.equals(HttpStatus.SC_FORBIDDEN)) {
+                    throw new SteamApiException(
+                            SteamApiException.Cause.FORBIDDEN, statusCode,
+                            response.getStatusLine().getReasonPhrase());
+                }
 				throw new SteamApiException(SteamApiException.Cause.HTTP_ERROR,
 						statusCode, response.getStatusLine().getReasonPhrase());
 			}
