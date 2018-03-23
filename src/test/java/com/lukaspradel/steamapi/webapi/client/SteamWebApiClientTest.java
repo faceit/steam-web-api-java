@@ -130,6 +130,21 @@ public class SteamWebApiClientTest extends BaseTest {
         client.processRequest(requestMock);
     }
 
+    @Test
+    public void testProcessExceptionCode() throws SteamApiException {
+
+        when(requestHandlerMock.getWebApiResponse(requestMock)).thenThrow(
+                new SteamApiException(SteamApiException.Cause.UNAUTHORIZED,
+                        401, "message"));
+        try {
+            client.processRequest(requestMock);
+            fail("Expecting exception");
+        } catch (SteamApiException ex) {
+            assertEquals(ex.getCauseCode(), SteamApiException.Cause.UNAUTHORIZED);
+        }
+
+    }
+
 	@Test(expectedExceptions = SteamApiException.class)
 	public void testProcessExceptionInternalError() throws SteamApiException {
 

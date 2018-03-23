@@ -9,6 +9,7 @@ public class SteamApiException extends Exception {
 	}
 
 	private String message;
+	private Cause causeCode;
 
 	public SteamApiException(String message) {
 		super(message);
@@ -24,13 +25,14 @@ public class SteamApiException extends Exception {
 
 		switch (cause) {
 		case MAPPING:
-			this.message = "The JSON response could not be parsed or mapped to the designated POJO. The most likely cause for this is that"
+			this.message = "The JSON response could not be parsed or mapped to the designated POJO. The most likely causeCode for this is that"
 					+ " the Steam API itself changed. Check for newer versions of this library to compensate for this.";
 			break;
 		default:
 			this.message = "The Web API request failed due to an unexpected error: "
 					+ exceptionCause.getMessage();
 		}
+		this.causeCode = cause;
 	}
 
 	public SteamApiException(Cause cause, Integer statusCode, String message) {
@@ -53,6 +55,8 @@ public class SteamApiException extends Exception {
 		default:
 			this.message = "The Web API request failed due to an unexpected error.";
 		}
+
+        this.causeCode = cause;
 	}
 
 	@Override
@@ -63,4 +67,9 @@ public class SteamApiException extends Exception {
 			return this.message;
 		}
 	}
+
+
+    public Cause getCauseCode() {
+        return this.causeCode;
+    }
 }
