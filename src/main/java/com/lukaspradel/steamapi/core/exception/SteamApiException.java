@@ -5,7 +5,7 @@ public class SteamApiException extends Exception {
 	private static final long serialVersionUID = 6414882632273395318L;
 
 	public enum Cause {
-		HTTP_ERROR, FORBIDDEN, INTERNAL_ERROR, MAPPING
+        UNAUTHORIZED, HTTP_ERROR, FORBIDDEN, INTERNAL_ERROR, MAPPING
 	}
 
 	private String message;
@@ -36,6 +36,9 @@ public class SteamApiException extends Exception {
 	public SteamApiException(Cause cause, Integer statusCode, String message) {
 
 		switch (cause) {
+        case UNAUTHORIZED:
+                this.message = "The Web API request failed due to user's privacy settings. User profile is set as private.";
+                break;
 		case HTTP_ERROR:
 			this.message = "The Web API request failed with the following HTTP error: "
 					+ message + " (status code: " + statusCode + ").";
